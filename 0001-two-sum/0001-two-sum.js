@@ -4,9 +4,15 @@
  * @return {number[]}
  */
 const twoSum = (nums, target) => {
+    let result = [];
+
     for (let i = 0; i < nums.length; i++) {
-       if (nums[i] + nums[i + 1] === target) {
-         return [i, i + 1];
-       }
+        for (let j = i + 1; j < nums.length; j++) {
+            if (nums[i] + nums[j] === target) {
+                result.push(i, j);
+            }
+        }
     }
+
+    return result;
 };
